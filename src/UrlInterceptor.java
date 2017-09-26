@@ -16,13 +16,17 @@ public class UrlInterceptor implements Filter{
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpServletRequest httpRequest = (HttpServletRequest)request;
-        HttpServletResponse httpresponse = (HttpServletResponse) response;
-        String name = "jyt";
-        User user = (User) httpRequest.getSession().getAttribute(name);
-        if (null == user) {
-            httpresponse.sendRedirect("/");
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        if(!(httpRequest.getRequestURI().equals("/") || httpRequest.getRequestURI().equals("/login"))){
+            String name = "jyt";
+            User user = (User) httpRequest.getSession().getAttribute(name);
+            if (null == user) {
+                httpResponse.sendRedirect("/");
+            } else {
+                filterChain.doFilter(request, response);
+            }
         } else {
-            filterChain.doFilter(request,response);
+            filterChain.doFilter(request, response);
         }
     }
 

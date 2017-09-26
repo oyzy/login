@@ -14,7 +14,7 @@
     登录成功！欢迎您,${userName} &nbsp; &nbsp;<input type="button" value="退出"  onclick="quit()">
     <input type="hidden" id="userName" value="${userName}">
 </body>
-<script src="/js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script>
     //注释掉的原因是无法区分刷新还是关闭
    /* $(window).unload(function (evt) {

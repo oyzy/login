@@ -30,8 +30,8 @@ public class LoginOutServlet extends HttpServlet{
                         session.removeAttribute(userName);
                     }
                 }
-                resp.getWriter().print("success");
         }
+        resp.getWriter().print("success");
     }
 
     @Override

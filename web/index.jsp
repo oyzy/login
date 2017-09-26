@@ -18,10 +18,10 @@
          <input type="button" value="提交" id="login">
          <input type="hidden" id="message">
   </body>
-  <form id="indexForm" action="user/index" method="post">
+  <form id="indexForm" action="index" method="post">
       <input type="hidden" name="name" id="userName">
   </form>
-  <script src="/js/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script>
     function load(){
         var message = $("#message").val();

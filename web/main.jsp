@@ -47,7 +47,7 @@
 
    function quit() {
         $.ajax({
-            url:"user/loginOut",
+            url:"loginOut",
             type:"post",
             data:{"name":$("#userName").val()},
             success:function(data){

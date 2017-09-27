@@ -17,7 +17,9 @@ public class UrlInterceptor implements Filter{
         response.setContentType("text/html;charset=UTF-8");
         HttpServletRequest httpRequest = (HttpServletRequest)request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        if(!(httpRequest.getRequestURI().equals("/") || httpRequest.getRequestURI().equals("/login"))){
+        String url = httpRequest.getRequestURL().toString();
+        String js = url.substring(url.length()-2,url.length());//排除js文件
+        if(!(httpRequest.getRequestURI().equals("/") || httpRequest.getRequestURI().equals("/login") || "js".equals(js))){
             String name = "jyt";
             User user = (User) httpRequest.getSession().getAttribute(name);
             if (null == user) {
